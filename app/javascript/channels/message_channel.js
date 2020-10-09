@@ -10,7 +10,7 @@ consumer.subscriptions.create("MessageChannel", {
   },
 
   received(data) {
-    const html = `<p>${data.content.text}</p>`;
+    const html = `<p>${data.content.text}</p>`; //13行目で受け取ったdataのなかにあるcontentのなかのtextを表示します。contentはコントローラーのcreateアクション内で指定したcontentからきています。contentは@messageと同義なので、textを取り出せるというわけです。
     const messages = document.getElementById('messages');
     const newMessage = document.getElementById('message_text');
     messages.insertAdjacentHTML('afterbegin', html);
