@@ -9,5 +9,6 @@ class MessagesController < ApplicationController
     if @message.save
       ActionCable.server.broadcast 'message_channel', content: @message
     end #broadcastとは、サーバーから送られるデータの経路のことを指します。broadcastを介してデータをクライアントに送信します。追記した10行目は、broadcastを通して、'message_channel'に向けて@messageを送信するということです。
+  end
 end
-#new.html.erbで保存されているメッセージをすべて表示させたいので、3行目で取得しています。
+# new.html.erbで保存されているメッセージをすべて表示させたいので、3行目で取得しています。
